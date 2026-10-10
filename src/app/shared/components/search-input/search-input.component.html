@@ -1,0 +1,14 @@
+<form class="search" role="search" (submit)="handleSubmit($event)">
+  <span class="search__icon">
+    <app-icon name="search" [size]="18" />
+  </span>
+  <input
+    class="search__input"
+    type="search"
+    autocomplete="off"
+    aria-label="Buscar en el menú"
+    [value]="value()"
+    [placeholder]="placeholder()"
+    (input)="handleInput($event)"
+  />
+</form>

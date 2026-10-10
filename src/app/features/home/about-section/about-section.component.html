@@ -1,0 +1,29 @@
+<section class="about" id="nosotros" aria-label="Nosotros">
+  <div class="container">
+    <app-section-title title="Nosotros" />
+
+    <div class="about__layout">
+      <div class="about__copy">
+        <p class="about__lead">Jawitas nace para llevar el sabor de Chulumani a tu mesa.</p>
+        <p class="about__text">
+          Preparamos jawitas bien doradas, jugos naturales y café orgánico con ingredientes de los Yungas y la
+          mejor receta boliviana. Cada pedido se hace con cariño, como en casa.
+        </p>
+      </div>
+
+      <ul class="about__highlights">
+        @for (highlight of highlights; track highlight.title) {
+          <li class="highlight">
+            <span class="highlight__icon">
+              <app-icon [name]="highlight.icon" [size]="24" />
+            </span>
+            <div>
+              <h3 class="highlight__title">{{ highlight.title }}</h3>
+              <p class="highlight__text">{{ highlight.text }}</p>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

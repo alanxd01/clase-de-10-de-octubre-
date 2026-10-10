@@ -1,0 +1,15 @@
+<article class="card" [style.--i]="index()">
+  <div class="card__media">
+    <img class="card__image" [src]="product().image" [alt]="product().name" loading="lazy" />
+    <app-price-badge class="card__price" [price]="product().price" />
+  </div>
+
+  <div class="card__body">
+    <h3 class="card__title">{{ product().name }}</h3>
+    <p class="card__description">{{ product().description }}</p>
+  </div>
+
+  <div class="card__action">
+    <app-button variant="outline" [block]="true" (click)="purchase.emit(product())">Comprar</app-button>
+  </div>
+</article>

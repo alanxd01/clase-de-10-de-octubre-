@@ -1,0 +1,22 @@
+<label class="field__label" [attr.for]="fieldId">{{ label() }}</label>
+<div class="field__control" [class.field__control--error]="!!error()">
+  @if (icon()) {
+    <span class="field__icon">
+      <app-icon [name]="icon() || 'user'" [size]="18" />
+    </span>
+  }
+  <input
+    class="field__input"
+    [id]="fieldId"
+    [type]="type()"
+    [value]="value()"
+    [placeholder]="placeholder()"
+    [disabled]="isDisabled()"
+    [attr.autocomplete]="autocomplete()"
+    (input)="handleInput($event)"
+    (blur)="handleBlur()"
+  />
+</div>
+@if (error()) {
+  <p class="field__error" role="alert">{{ error() }}</p>
+}

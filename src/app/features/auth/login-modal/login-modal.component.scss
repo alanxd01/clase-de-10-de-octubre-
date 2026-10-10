@@ -1,0 +1,27 @@
+.login__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.login__error {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fdecec;
+  color: #c93a3f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login__hint {
+  margin-top: 18px;
+  color: var(--jw-muted);
+  font-size: 13px;
+  text-align: center;
+}

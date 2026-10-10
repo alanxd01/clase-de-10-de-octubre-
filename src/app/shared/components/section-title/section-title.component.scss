@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-title__dash {
+  width: 32px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--jw-brand);
+}
+
+.section-title__text {
+  color: #7a2f12;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+  .section-title__text {
+    font-size: 26px;
+  }
+}

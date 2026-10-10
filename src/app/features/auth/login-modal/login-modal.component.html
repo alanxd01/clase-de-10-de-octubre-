@@ -1,0 +1,34 @@
+<app-modal title="Iniciar Sesión" [open]="isOpen()" (closed)="close()">
+  <div class="login__logo">
+    <app-logo [size]="64" [ring]="true" />
+  </div>
+
+  <form class="login__form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <app-form-field
+      label="Correo Electrónico"
+      type="email"
+      placeholder="tu@correo.com"
+      icon="user"
+      autocomplete="email"
+      formControlName="email"
+      [error]="emailError()"
+    />
+    <app-form-field
+      label="Contraseña"
+      type="password"
+      placeholder="••••••••"
+      icon="asterisk"
+      autocomplete="current-password"
+      formControlName="password"
+      [error]="passwordError()"
+    />
+
+    @if (loginFailed()) {
+      <p class="login__error" role="alert">No pudimos iniciar sesión. Revisa tus datos e inténtalo otra vez.</p>
+    }
+
+    <app-button type="submit" variant="gradient" [block]="true">Entrar a Jawitas</app-button>
+  </form>
+
+  <p class="login__hint">Demo: usa cualquier correo válido y una contraseña de 6 o más caracteres.</p>
+</app-modal>

@@ -1,0 +1,157 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(60, 28, 12, 0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  width: min(420px, 100%);
+  background: #fffdfb;
+  box-shadow: var(--jw-shadow-lg);
+  visibility: hidden;
+  transform: translateX(100%);
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0.35s ease;
+
+  &.is-open {
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+.drawer__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 28px 22px;
+  background: #fff1e4;
+}
+
+.drawer__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--jw-brown-dark);
+  font-size: 26px;
+  font-weight: 800;
+
+  app-icon {
+    color: var(--jw-brand);
+  }
+}
+
+.drawer__count {
+  margin-top: 4px;
+  color: var(--jw-brand-strong);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 28px;
+}
+
+.empty {
+  display: flex;
+  height: 100%;
+  min-height: 260px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.empty__icon {
+  margin-bottom: 8px;
+  color: #ffc9a0;
+}
+
+.empty__title {
+  color: #b58e82;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.empty__text {
+  color: #f4a97f;
+  font-size: 15px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  animation: item-in 0.3s ease both;
+}
+
+.drawer__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px 28px 28px;
+  border-top: 1px solid var(--jw-border);
+  background: #ffffff;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+  border: 1px solid var(--jw-border);
+  border-radius: 16px;
+  background: #fff4e8;
+}
+
+.total__label {
+  color: var(--jw-brown-dark);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.total__value {
+  color: var(--jw-brand-strong);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+@keyframes item-in {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

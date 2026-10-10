@@ -1,0 +1,16 @@
+:host {
+  display: inline-block;
+}
+
+.price-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--jw-brand-strong);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+  box-shadow: 0 4px 12px rgba(107, 42, 16, 0.14);
+  backdrop-filter: blur(4px);
+}

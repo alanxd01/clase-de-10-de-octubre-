@@ -1,0 +1,9 @@
+<div class="stepper">
+  <button class="stepper__btn" type="button" aria-label="Disminuir cantidad" (click)="decreased.emit()">
+    <app-icon name="minus" [size]="14" [strokeWidth]="3" />
+  </button>
+  <span class="stepper__value" aria-live="polite">{{ quantity() }}</span>
+  <button class="stepper__btn" type="button" aria-label="Aumentar cantidad" (click)="increased.emit()">
+    <app-icon name="plus" [size]="14" [strokeWidth]="3" />
+  </button>
+</div>

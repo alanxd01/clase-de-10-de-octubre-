@@ -1,0 +1,117 @@
+:host {
+  display: inline-block;
+}
+
+:host(.is-block) {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 28px;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    filter 0.2s ease;
+
+  &:focus-visible {
+    outline: 3px solid rgba(255, 122, 18, 0.35);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &[data-shape='pill'] {
+    border-radius: 999px;
+  }
+
+  &[data-shape='rounded'] {
+    border-radius: 14px;
+  }
+
+  &[data-size='sm'] {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  &[data-size='lg'] {
+    padding: 20px 40px;
+    font-size: 17px;
+  }
+
+  &[data-variant='solid'] {
+    background: var(--jw-brand);
+    box-shadow: 0 10px 24px rgba(255, 122, 18, 0.28);
+
+    &:hover:not(:disabled) {
+      background: #ff6a00;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(255, 106, 0, 0.34);
+    }
+
+    &:disabled {
+      background: var(--jw-brand-soft);
+      box-shadow: none;
+    }
+  }
+
+  &[data-variant='gradient'] {
+    background: linear-gradient(90deg, #ff7a00 0%, #f84c0a 100%);
+    box-shadow: 0 8px 18px rgba(248, 76, 10, 0.28);
+
+    &:hover:not(:disabled) {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      box-shadow: none;
+    }
+  }
+
+  &[data-variant='outline'] {
+    background: #fff4e8;
+    border-color: var(--jw-border-strong);
+    color: var(--jw-brand-strong);
+
+    &:hover:not(:disabled) {
+      background: #ff9a5c;
+      border-color: #ff9a5c;
+      color: #ffffff;
+    }
+  }
+
+  &[data-variant='chip'] {
+    padding: 11px 22px;
+    background: var(--jw-surface);
+    border-color: var(--jw-border-strong);
+    color: var(--jw-brand-strong);
+    font-size: 15px;
+
+    &:hover:not(:disabled) {
+      background: #fff1e4;
+      border-color: var(--jw-brand-soft);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+:host {
+  display: inline-block;
+  line-height: 0;
+}
+
+.logo {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--jw-brand);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.logo--ring {
+  border: 4px solid #ffd3a8;
+  box-shadow: 0 0 0 4px #fff1e4;
+}

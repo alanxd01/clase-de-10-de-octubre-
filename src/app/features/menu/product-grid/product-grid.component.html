@@ -1,0 +1,12 @@
+@if (products().length > 0) {
+  <div class="grid">
+    @for (product of products(); track product.id; let position = $index) {
+      <app-product-card [product]="product" [index]="position" (purchase)="purchase.emit($event)" />
+    }
+  </div>
+} @else {
+  <div class="empty">
+    <p class="empty__title">No encontramos resultados</p>
+    <p class="empty__text">Prueba con otra palabra, como "jawita" o "café".</p>
+  </div>
+}

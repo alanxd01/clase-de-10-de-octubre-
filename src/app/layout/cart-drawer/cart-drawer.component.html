@@ -1,0 +1,56 @@
+<div class="backdrop" [class.is-open]="isOpen()" (click)="close()"></div>
+
+<aside
+  class="drawer"
+  [class.is-open]="isOpen()"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Tu pedido"
+  [attr.aria-hidden]="!isOpen()"
+>
+  <header class="drawer__header">
+    <div class="drawer__heading">
+      <h2 class="drawer__title">
+        <app-icon name="cart" [size]="28" />
+        <span>Tu Pedido</span>
+      </h2>
+      <p class="drawer__count">{{ count() }} {{ count() === 1 ? 'artículo' : 'artículos' }}</p>
+    </div>
+    <app-icon-button icon="close" label="Cerrar pedido" variant="light" [size]="44" (click)="close()" />
+  </header>
+
+  <div class="drawer__body">
+    @if (isEmpty()) {
+      <div class="empty">
+        <app-icon class="empty__icon" name="cart" [size]="88" [strokeWidth]="1.8" />
+        <p class="empty__title">Tu carrito está vacío</p>
+        <p class="empty__text">¡Agrega nuestras deliciosas jawitas!</p>
+      </div>
+    } @else {
+      <ul class="list">
+        @for (item of items(); track item.product.id) {
+          <li class="list__item">
+            <app-cart-item [item]="item" />
+          </li>
+        }
+      </ul>
+    }
+  </div>
+
+  <footer class="drawer__footer">
+    <div class="total">
+      <span class="total__label">Total a Pagar</span>
+      <strong class="total__value">{{ total() | bolivianos }}</strong>
+    </div>
+    <app-button
+      variant="solid"
+      size="lg"
+      [block]="true"
+      [disabled]="isEmpty()"
+      trailingIcon="chevron-right"
+      (click)="checkout()"
+    >
+      Proceder al Pago
+    </app-button>
+  </footer>
+</aside>

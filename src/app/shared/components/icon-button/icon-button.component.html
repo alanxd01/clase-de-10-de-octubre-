@@ -1,0 +1,13 @@
+<button
+  class="icon-btn"
+  type="button"
+  [attr.data-variant]="variant()"
+  [attr.aria-label]="label()"
+  [style.width.px]="size()"
+  [style.height.px]="size()"
+>
+  <app-icon [name]="icon()" [size]="variant() === 'plain' ? 24 : 22" />
+  @if (badge() > 0) {
+    <span class="icon-btn__badge">{{ badge() }}</span>
+  }
+</button>

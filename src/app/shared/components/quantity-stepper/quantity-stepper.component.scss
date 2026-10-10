@@ -1,0 +1,44 @@
+:host {
+  display: inline-block;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--jw-border-strong);
+  border-radius: 999px;
+  background: #fff4e8;
+}
+
+.stepper__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--jw-brand-strong);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(138, 59, 27, 0.12);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background: var(--jw-brand);
+    color: #ffffff;
+  }
+}
+
+.stepper__value {
+  min-width: 26px;
+  color: var(--jw-brown);
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+}

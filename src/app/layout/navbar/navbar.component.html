@@ -1,0 +1,32 @@
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a class="brand" href="#inicio" aria-label="Jawitas Mi Chulumani, ir al inicio" (click)="goTo('inicio', $event)">
+      <app-logo [size]="52" />
+      <span class="brand__text">
+        <span class="brand__name">Jawitas</span>
+        <span class="brand__tagline">Mi Chulumani</span>
+      </span>
+    </a>
+
+    <nav class="navbar__links" aria-label="Navegación principal">
+      @for (link of links; track link.target) {
+        <a class="navbar__link" [href]="'#' + link.target" (click)="goTo(link.target, $event)">
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <div class="navbar__actions">
+      <app-search-input
+        class="navbar__search"
+        [value]="searchTerm()"
+        (valueChange)="updateSearch($event)"
+        (submitted)="submitSearch()"
+      />
+      <app-button variant="chip" shape="pill" leadingIcon="user" (click)="handleAccount()">
+        {{ isLoggedIn() ? 'Hola, ' + firstName() : 'Ingresar' }}
+      </app-button>
+      <app-icon-button icon="cart" label="Abrir mi pedido" [badge]="cartCount()" (click)="openCart()" />
+    </div>
+  </div>
+</header>

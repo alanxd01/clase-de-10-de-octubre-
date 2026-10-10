@@ -1,0 +1,11 @@
+<section class="menu" id="menu" aria-label="Menú completo">
+  <div class="container">
+    <div class="menu__header">
+      <app-section-title title="Nuestro Menú Completo" />
+      @if (searchTerm().trim()) {
+        <p class="menu__filter">Mostrando resultados para "{{ searchTerm().trim() }}"</p>
+      }
+    </div>
+    <app-product-grid [products]="products()" (purchase)="addToCart($event)" />
+  </div>
+</section>

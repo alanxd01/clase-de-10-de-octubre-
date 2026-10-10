@@ -1,0 +1,16 @@
+<button
+  class="btn"
+  [type]="type()"
+  [disabled]="disabled()"
+  [attr.data-variant]="variant()"
+  [attr.data-shape]="shape()"
+  [attr.data-size]="size()"
+>
+  @if (leadingIcon()) {
+    <app-icon [name]="leadingIcon() || 'plus'" [size]="18" />
+  }
+  <span class="btn__label"><ng-content /></span>
+  @if (trailingIcon()) {
+    <app-icon [name]="trailingIcon() || 'plus'" [size]="18" [strokeWidth]="2.5" />
+  }
+</button>
